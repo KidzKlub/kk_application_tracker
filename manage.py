@@ -12,7 +12,7 @@ if __name__ == "__main__":
         try:
             conn = psycopg2.connect(dbname="postgres", user="postgres", password="postgres", host="db")
         except psycopg2.OperationalError:
-            logging.log("Couldn't connect to database")
+            logging.warn("Couldn't connect to database")
             time.sleep(2)
         else:
             db_up = True
